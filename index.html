@@ -21,7 +21,6 @@
 
     <!------------------------------------------ flow Byte----------------------------------- -->
 
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
 
@@ -53,7 +52,7 @@
                         leaf1: "url('./images/leaf01.png')",
                         call_to_action: "url('./images/call.jpg')",
                         testimonials: "url('./images/testimonials.jpg')",
-                    },
+                    }
                 },
             },
         }
@@ -178,7 +177,7 @@
             </div>
             <div class="navbar-end gap-5 items-center">
                 <div class="drawer-end w-auto flex justify-center items-center">
-                    <div class="flex-none space-x-5">
+                    <div class="flex-none space-x-5 z-50">
                         <div class="dropdown dropdown-end">
                             <div tabindex="0" role="button" class="active:scale-90 transition duration-300 ease-in-out">
                                 <div class="indicator font-semibold text-2xl text-lightGreen">
@@ -222,7 +221,7 @@
                         </label>
                     </div>
 
-                    <div class="drawer-side z-10 text-black">
+                    <div class="drawer-side z-10 text-black z-">
                         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                         <ul class="menu justify-evenly items-center bg-base-200 text-xl font-semibold min-h-full w-80 p-4 backdrop-blur-[2px] bg-[rgba(255,255,255,0.55)] rounded-s-xl">
 
@@ -250,35 +249,36 @@
 
         <!------------------------------------------------- Banner section start ----------------------------------------->
 
+
         <section class="bg-leaf1 bg-no-repeat bg-right-bottom">
             <div class="h-full w-full bg-body bg-opacity-90">
                 <div class="lg:w-9/12 w-11/12 h-full mx-auto sm:grid grid-cols-2 gap-10 items-center justify-center sm:py-28 py-5">
-
                     <div id="default-carousel" class="relative w-full" data-carousel="slide">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-56 overflow-hidden rounded-lg md:h-[40em]">
+                        <div class="relative h-[40em] overflow-hidden rounded-lg">
                              <!-- Item 1 -->
-                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="images/bannerbg.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 2 -->
-                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="images/one.jpg" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 3 -->
-                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="images/two.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 4 -->
-                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="images/three.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                             <!-- Item 5 -->
-                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="images/four.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                         </div>
                     </div>
+                     
                     <div class="sm:text-left text-center">
                         <img class="sm:block hidden" src="./images/small-leaf.png" alt="" />
                         <h4 class="sm:text-xl text-lg font-semibold my-5">
@@ -313,7 +313,7 @@
 
         <section class="bg-black text-white">
             <div class="w-11/12 mx-auto py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 sm:gap-10 gap-5">
-                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                <div class="bg-p p-10 rounded-lg flex items-start gap-5">
                     <div>
                         <i class="fa-solid fa-truck text-4xl text-green"></i>
                     </div>
@@ -324,7 +324,7 @@
                         <p>Above $5 Only</p>
                     </div>
                 </div>
-                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                <div class="bg-p p-10 rounded-lg flex items-start gap-5">
                     <div>
                         <i class="fa-solid fa-certificate text-4xl text-green"></i>
                     </div>
@@ -336,7 +336,7 @@
                         <p>100% Organic</p>
                     </div>
                 </div>
-                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                <div class="bg-p p-10 rounded-lg flex items-start gap-5">
                     <div>
                         <i class="fa-solid fa-piggy-bank text-4xl text-green"></i>
                     </div>
@@ -347,7 +347,7 @@
                         <p>At Lowest Price</p>
                     </div>
                 </div>
-                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                <div class="bg-p p-10 rounded-lg flex items-start gap-5">
                     <div>
                         <i class="fa-solid fa-recycle text-4xl text-green"></i>
                     </div>
