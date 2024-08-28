@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic Food</title>
+
+    <!------------------------------------------------- Google Font Link ----------------------------------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!------------------------------------------------- tailwind css & DaisyUI Links ------------------------------>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!------------------------------------------ flow Byte----------------------------------- -->
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+
+    <!--------------------------------------------------- Font awesome CDN link ---------------------------------------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-------------------------------------------------- Tailwind CSS Configuration ------------------------------------------>
+
+    <link rel="shortcut icon" href="images/food-delivery.png" type="image/x-icon">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: 'rgb(139, 195, 74)',
+                        black: 'rgb(17, 17, 17)',
+                        body: 'rgb(248, 246, 243)',
+                        lightGreen: 'rgb(106, 151, 57)',
+                        p: 'rgb(51, 51, 51)',
+                    },
+                    fontFamily: {
+                        Poppins: 'Poppins',
+                    },
+                    backgroundImage: {
+                        leaf1: "url('./images/leaf01.png')",
+                        call_to_action: "url('./images/call.jpg')",
+                        testimonials: "url('./images/testimonials.jpg')",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        .banner{
+            width: 90%;
+            height: 6em;
+            margin-inline: auto;
+            position: relative;
+            overflow: hidden;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            mask-image: linear-gradient(to right ,
+            rgba(0,0,0,0) ,
+            rgba(0,0,0,1) 20%,
+            rgba(0,0,0,1) 80%, 
+            rgba(0,0,0,0)); 
+            z-index: -10;
+            margin-top: 5em;
+            margin-bottom: 5em;                            
+        }
+    
+        .banner-logo{
+            position: absolute;
+            left: max(calc(120px * 8 ), 100%);
+            animation-name: scroll;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+    
+        @keyframes scroll{
+    
+            form{}
+    
+            to{
+                left: -120px;
+            }
+        }
+    
+        .banner-logo-1{
+            animation-delay: calc(20s / 5 * (5 - 1) * -1) ;
+        }
+    
+        .banner-logo-2{
+            animation-delay: calc(20s / 5 * (5 - 2) * -1) ;
+        }
+    
+        .banner-logo-3{
+            animation-delay: calc(20s / 5 * (5 - 3) * -1) ;
+        }
+        
+        .banner-logo-4{
+            animation-delay: calc(20s / 5 * (5 - 4) * -1) ;
+        }
+
+        .banner-logo-5{
+            animation-delay: calc(20s / 5 * (5 - 5) * -1) ;
+        }
+
+
+
+        
+        .ani h2{
+            animation: type 3s infinite alternate;     
+        }
+
+
+        @keyframes type {
+            0% {
+                width: 0;
+                border-right: none;
+            }
+
+            100%{
+                opacity: 1;
+                border-right: none;
+            }
+        }
+        
+    
+    </style>
+
+</head>
+
+<body class="font-Poppins">
+
+    <!---------------------------------------- banner section --------------------------------->
+
+    <header>
+        
+        <!-- ---------------------------nav bar section --------------------------------->
+
+        <nav class="navbar w-11/12 mx-auto">
+            <div class="navbar-start">
+                <a href="#">
+                    <img class="w-[150px]" src="./images/logo.svg" alt="" />
+                </a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 flex items-center gap-5 text-lg font-medium">
+                    <li class="hover:text-green transition-colors ease-in-out duration-300">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="hover:text-green transition-colors ease-in-out duration-300">
+                        <a href="#">Everything</a>
+                    </li>
+                    <li class="hover:text-green transition-colors ease-in-out duration-300">
+                        <a href="#">Groceries</a>
+                    </li>
+                    <li class="hover:text-green transition-colors ease-in-out duration-300">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="hover:text-green transition-colors ease-in-out duration-300">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end gap-5 items-center">
+                <div class="drawer-end w-auto flex justify-center items-center">
+                    <div class="flex-none space-x-5">
+                        <div class="dropdown dropdown-end">
+                            <div tabindex="0" role="button" class="active:scale-90 transition duration-300 ease-in-out">
+                                <div class="indicator font-semibold text-2xl text-lightGreen">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span class="badge badge-sm indicator-item">8</span>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="card card-compact dropdown-content font-normal bg-base-100 z-[1] mt-10 w-52 shadow-2xl backdrop-blur-sm bg-white">
+                                <div class="card-body ">
+                                    <span class="text-lg font-bold">8 Items</span>
+                                    <span class="text-info text-p">Subtotal: $999</span>
+                                    <div class="card-actions">
+                                        <button class="btn btn-primary btn-block bg-lightGreen hover:bg-green px-10 py-4 rounded-md font-semibold text-white border-none"> View Cart </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dropdown-end b">
+                            <div tabindex="0" role="button" class="active:scale-90 transition duration-300 ease-in-out">
+                                <div class="w-10 rounded-full">
+                                    <button><i class="fa-solid fa-user text-2xl"></i></button>
+                                </div>
+                            </div>
+                            <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-10 w-52 p-2 shadow-2xl backdrop-blur-sm bg-white">
+                                <li>
+                                    <a class="justify-between">
+                                      Profile
+                                      <span class="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li><a>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content">
+                      <!-- Page content here -->
+                        <label for="my-drawer" class="btn btn-ghost lg:hidden bg-green text-lg border-none text-black"><i class="fa-solid fa-bars"></i>
+                        </label>
+                    </div>
+
+                    <div class="drawer-side z-10 text-black">
+                        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu justify-evenly items-center bg-base-200 text-xl font-semibold min-h-full w-80 p-4 backdrop-blur-[2px] bg-[rgba(255,255,255,0.55)] rounded-s-xl">
+
+                        <li class="hover:text-green transition-colors ease-in-out duration-300">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="hover:text-green transition-colors ease-in-out duration-300">
+                            <a href="#">Everything</a>
+                        </li>
+                        <li class="hover:text-green transition-colors ease-in-out duration-300">
+                            <a href="#">Groceries</a>
+                        </li>
+                        <li class="hover:text-green transition-colors ease-in-out duration-300">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="hover:text-green transition-colors ease-in-out duration-300">
+                            <a href="#">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!------------------------------------------------- Banner section start ----------------------------------------->
+
+        <section class="bg-leaf1 bg-no-repeat bg-right-bottom">
+            <div class="h-full w-full bg-body bg-opacity-90">
+                <div class="lg:w-9/12 w-11/12 h-full mx-auto sm:grid grid-cols-2 gap-10 items-center justify-center sm:py-28 py-5">
+
+                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-56 overflow-hidden rounded-lg md:h-[40em]">
+                             <!-- Item 1 -->
+                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                                <img src="images/bannerbg.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                                <img src="images/one.jpg" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                                <img src="images/two.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                                <img src="images/three.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="hidden duration-300 ease-in-out" data-carousel-item>
+                                <img src="images/four.png" class="absolute block w-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:text-left text-center">
+                        <img class="sm:block hidden" src="./images/small-leaf.png" alt="" />
+                        <h4 class="sm:text-xl text-lg font-semibold my-5">
+                            Best Quality Products
+                        </h4>
+                        <div class="ani flex flex-col items-center text-center text-4xl w-full md:items-start md:text-left xl:text-6xl  font-bold leading-tight">
+                            <h1> Join The Organic </h1>
+                            <h2 class="text-center opacity-0 w-[6em] overflow-hidden"> Movement!</h2>
+                        </div>
+                        <p class="lg:w-3/4 text-neutral-500 my-5">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </p>
+                        <div class="flex sm:justify-start justify-center pb-10">
+                            <button
+                                class="flex gap-2 items-center bg-lightGreen hover:bg-green px-10 py-4 rounded-md font-semibold text-white hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>shop Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!----------------------------------------------------------------------------- main section start ------------------------------------------------------------------>
+
+    <main>
+
+        <!------------------------------------------------------------------------ Special features section ------------------------------------------------->
+
+        <section class="bg-black text-white">
+            <div class="w-11/12 mx-auto py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 sm:gap-10 gap-5">
+                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                    <div>
+                        <i class="fa-solid fa-truck text-4xl text-green"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold capitalize mb-2 leading-none">
+                            free shipping
+                        </h3>
+                        <p>Above $5 Only</p>
+                    </div>
+                </div>
+                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                    <div>
+                        <i class="fa-solid fa-certificate text-4xl text-green"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold capitalize mb-2 leading-none">
+                            Certified Organic
+                        </h3>
+
+                        <p>100% Organic</p>
+                    </div>
+                </div>
+                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                    <div>
+                        <i class="fa-solid fa-piggy-bank text-4xl text-green"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold capitalize mb-2 leading-none">
+                            Huge Savings
+                        </h3>
+                        <p>At Lowest Price</p>
+                    </div>
+                </div>
+                <div class="bg-p p-10 rounded-sm flex items-start gap-5">
+                    <div>
+                        <i class="fa-solid fa-recycle text-4xl text-green"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold capitalize mb-2 leading-none">
+                            Easy Returns
+                        </h3>
+                        <p>No Questions Asked</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------------------------------------------------------------- about Us ---------------------------------------------------------------->
+
+        <section class="grid lg:grid-cols-2 items-center gap-10">
+            <div class="w-11/12 lg:ml-auto mx-auto lg:py-0 pt-10 capitalize">
+                <h5 class="text-xl font-semibold">about us</h5>
+                <h2 class="sm:text-6xl text-4xl sm:my-10 my-5">
+                    tell website visitors who you are and why they should choose your
+                    business
+                </h2>
+                <p class="sm:text-lg text-base leading-8 text-justify sm:mb-10 mb-5">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+                    earum, tenetur quam repellendus architecto sequi consequatur
+                    deserunt illum? Repellat, consequatur quae. Ut, quas distinctio
+                    expedita perspiciatis molestias voluptas nam optio unde sunt dolor,
+                    quo dicta reiciendis! Alias nostrum tempore blanditiis earum eum
+                    autem sapiente voluptatum. Optio sunt perferendis maiores natus!
+                </p>
+                <button
+                    class="flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out px-10 py-4 rounded-md font-semibold text-white">
+                    Find Out More
+                </button>
+            </div>
+            <img src="./images/about.jpg" alt="" />
+        </section>
+
+        <!---------------------------------------------------------------------------- Call to action -------------------------------------------------------------->
+
+        <section class="bg-call_to_action h-96 py-56 bg-no-repeat bg-cover bg-center relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-black/30 flex justify-center items-center">
+                <div class="ani z-10 text-white">
+                    <h3 class="text-5xl font-semibold text-center">
+                        Insert A call to action
+                    </h3>
+                    <p class="text-xl w-2/3 mx-auto text-center my-5">
+                        think of what you want your visitors to do next maybe they should
+                        contact you?
+                    </p>
+                    <div class="flex justify-center">
+                        <button
+                            class="btn bg-transparent hover:bg-green hover:border-green hover:scale-[1.09] transition duration-300 ease-in-out text-white border-white">
+                            Get In Touch
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------------------------------------------------------- products section ---------------------------------------------------->
+
+        <section class="bg-body py-10">
+            <div class="w-11/12 mx-auto">
+                <div class="flex flex-col justify-center items-center gap-5 my-10">
+                    <img src="./images/small-leaf.png" alt="" />
+                    <h2 class="text-4xl font-semibold">Best Selling Products</h2>
+                </div>
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 mb-20">
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product01.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Assorted Coffee
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product02.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Coconut Oil
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-3" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product03.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Orange Juice
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product04.jpg" alt="Shoes" class="rounded-xl w-[92%]" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Keto Diet
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product05.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Red Chilli
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-6" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product06.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Hand Sanitizer
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product07.jpg" alt="Shoes" class="rounded-xl w-[92%]" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Perfume
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-8" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-8" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-8" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-8" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-8" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-full rounded-md shadow">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/product08.jpg" alt="Shoes" class="rounded-xl w-[92%]" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h3 class="capitalize text-slate-400">Groceries</h3>
+                            <h2 class="card-title capitalize text-p">
+                                Karisa Maitha
+                            </h2>
+                            <div class="rating">
+                                <input type="radio" name="rating-9" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-9" class="mask mask-star-2 bg-yellow-500" checked="checked"/>
+                                <input type="radio" name="rating-9" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-9" class="mask mask-star-2 bg-yellow-500" />
+                                <input type="radio" name="rating-9" class="mask mask-star-2 bg-yellow-500" />
+                            </div>
+                            <p>$35.00</p>
+                            <div class="card-actions">
+                                <button
+                                    class="btn flex gap-2 items-center bg-lightGreen hover:bg-green hover:scale-[1.09] active:scale-95 transition duration-300 ease-in-out py-4 rounded-md font-semibold text-white ">
+                                    <span>Buy Now</span>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------- Brand Section --------------------------------------- -->
+
+        <section class="banner">
+            <img class="banner-logo banner-logo-1" src="./images/logo-1.svg" alt="">
+            <img class="banner-logo banner-logo-2" src="./images/logo-2.svg" alt="">
+            <img class="banner-logo banner-logo-3" src="./images/logo-3.svg" alt="">
+            <img class="banner-logo banner-logo-4" src="./images/logo-4.svg" alt="">
+            <img class="banner-logo banner-logo-5" src="./images/logo-5.svg" alt="">
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white p-10">
+        <div class="footer w-11/12 mx-auto py-10 flex flex-col justify-center items-center text-center xl:flex xl:flex-row">
+            <aside>
+                <img src="./images/logo-white.png" alt="" />
+                <p>Providing Organic Food since 1992</p>
+            </aside>
+            <div class="w-full grid grid-cols-2 justify-items-center md:grid-cols-3">
+                <nav class="text-left flex flex-col gap-3">
+                    <h6 class="footer-title">Services</h6>
+                    <a class="link link-hover">Branding</a>
+                    <a class="link link-hover">Design</a>
+                    <a class="link link-hover">Marketing</a>
+                    <a class="link link-hover">Advertisement</a>
+                </nav>
+                <nav class="text-right flex flex-col m-0 gap-3 md:text-center xl:text-left">
+                    <h6 class="footer-title">Company</h6>
+                    <a class="link link-hover">About us</a>
+                    <a class="link link-hover">Contact</a>
+                    <a class="link link-hover">Jobs</a>
+                    <a class="link link-hover">Press kit</a>
+                </nav>
+                <nav class="flex flex-col text-center col-span-2 mt-5 gap-3 md:text-right md:col-span-1 xl:text-left">
+                    <h6 class="footer-title">Legal</h6>
+                    <a class="link link-hover">Terms of use</a>
+                    <a class="link link-hover">Privacy policy</a>
+                    <a class="link link-hover">Cookie policy</a>
+                </nav>
+            </div>
+         
+        </div>
+    </footer>
+    
+</body>
+
+</html>
